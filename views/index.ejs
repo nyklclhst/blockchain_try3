@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html style="background-color: #f9f9f9;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seculab Data Center</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="javascripts/index.js"></script>
+</head>
+<body style="background-color: transparent;" onload="ready()">
+        <nav class="navbar navbar-light navbar-expand-md" style="background-color: transparent;">
+            <div class="container-fluid"><a class="navbar-brand" href="#"><img src="assets/img/logosecu.png" style="width: 40px;"></a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div
+                    class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="font-family: 'Fjalla One', sans-serif;font-size: 25px;">Beranda</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size: 25px;font-family: 'Fjalla One', sans-serif;">Barang</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: 'Fjalla One', sans-serif;font-size: 25px;">Pinjaman</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size: 25px;font-family: 'Fjalla One', sans-serif;">History</a></li>
+                    </ul>
+            </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row" style="height: 594px;">
+                <div class="col text-center align-self-center">
+                    <div class="d-flex d-xl-flex justify-content-center log2">
+                        <div class="d-xl-flex justify-content-xl-center logis" style="margin-top: 29px;">
+                            <div class="log" style="width: 200px;height: 200px;background-color: #dddddd;"></div>
+                        </div>
+                        <div class="d-xl-flex justify-content-xl-center logis" style="margin-top: 13px;">
+                            <div class="log" style="width: 200px;height: 200px;background-color: #f1efef;"></div>
+                        </div>
+                        <div class="log" style="width: 200px;height: 200px;background-color: #eae8e8;"></div>
+                    </div>
+                </div>
+                <div class="col align-self-center">
+                    <h1 style="font-family: Ubuntu, sans-serif;color: rgb(65,74,84);font-size: 64px;">Logistik Seculab</h1>
+                    <div class="line" style="background-color: rgb(51,155,200);margin-bottom: 11px;margin-top: -7px;width: 153px;height: 4px;"></div>
+                    <p>Website ini melayani segala bentuk keperluan yang bersangkutan dengan logistik termasuk pendataan pengadaan, peminjaman, dan alokasi barang dalam bentuk apapun.<br>#Block-chainErpan</p>
+                    <div></div><button class="btn btn-primary" id="masuk" data-toggle="modal" data-target="#modalLogin" type="button" style="margin-right: 0px;background-color: rgba(141,193,248,0.51);color: rgb(0,123,255);">Masuk</button><button class="btn btn-primary" id="daftar" data-toggle="modal" data-target="#modalRegis" type="button" style="background-color: rgb(248,248,248);color: rgb(51,149,255);margin-left: -4px;">Daftar</button></div>
+            </div>
+        </div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="modalRegis" aria-labelledby="modalRegis" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="border-radius: 10px; background-color: #ebebeb;">
+                    <div class="modal-header text-center" style="border-bottom: none;">
+                        <h3 class="modal-title modal-title w-100 font-weight-bold my-3 text-center" style="color: rgb(99,104,109);">Registration</h3>                    
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body" style="margin-top: 5px;" aria-labelledby="modalRegis" aria-hidden="true">
+                        <form method="POST" action="regis">
+                            <div class="form-group"><input class="form-control" type="text" id="fr_username" name="fr_username" placeholder="Username" required></div>
+                            <div class="form-group"><input class="form-control" type="email" id="fr_email" name="fr_email" placeholder="Email" required></div>
+                            <div class="form-group">
+                                <input class="form-control validate" type="password" id="fr_pass" placeholder="Password" name="f_pass" onkeyup="validate()" required>
+                                <span id="message1"></span>                            
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="fr_pass1" placeholder="Confirm Password" name="fr_pass" onkeyup="check()" required>
+                                <span id="message"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block" id="br_submit" name="br_submit">Submit</button>
+                            </div>                    
+                        </form>
+                    </div>
+                    <div style="height: 9px;background-color: #007bff;margin-top: 0px; border-bottom-left-radius:10px; border-bottom-right-radius: 10px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="modalLogin" aria-labelledby="modalLogin" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="border-radius: 10px; background-color: #ebebeb;">
+                    <div class="modal-header text-center" style="border-bottom: none;">
+                        <h3 class="modal-title modal-title w-100 dark-grey-text font-weight-bold my-3" style="color: rgb(99,104,109);">Login</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <div class="modal-body mx-4" style="margin-top: 5px;" aria-labelledby="modalLogin" aria-hidden="true">
+                        <form method="POST" action="login">
+                            <div class="form-group"><input class="form-control" type="email" id="fl_email" name="fl_email" placeholder="Email" required></div>
+                            <div class="form-group"><input class="form-control" type="password" id="fl_pass" placeholder="Password" name="fl_pass" onkeyup="check()" required></div>
+                            <div class="form-group"><button type="submit" class="btn btn-primary btn-block" id="bl_submit" name="bl_submit">Submit</button></div>                    
+                        </form>
+                    </div>
+                    <div style="height: 9px;background-color: #007bff;margin-top: 0px; border-bottom-left-radius:10px; border-bottom-right-radius: 10px;"></div>
+                </div>
+            </div>
+        </div>
+    <span id='msg' hidden><%= msg %></span>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/smart-forms.min.js"></script>
+</body>
+</html>
