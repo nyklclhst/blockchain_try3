@@ -1,0 +1,39 @@
+<div class="modal fade" role="dialog" tabindex="-1" id="addPinjaman" aria-labelledby="modalAddPinjam" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="border-radius: 10px; background-color: #ebebeb;">
+            <div class="modal-header text-center" style="border-bottom: none;">
+                <h3 class="modal-title modal-title w-100 dark-grey-text font-weight-bold my-3" style="color: rgb(99,104,109);">Input Card</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body mx-4" style="margin-top: 5px;" aria-labelledby="modalLogin" aria-hidden="true">
+                <form method="POST" action="barang">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="user" name="user" placeholder="Enter your name.." required>
+                    </div>
+                    <div class="form-group">
+                        <select name="idbarang" id="idbarang" class="custom-select" required>
+                            <% for(var i=0; i < id.length; i++) { %>
+                            <option value="<%= id[i] %>"><%= name[i] %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control" id="jumlah_brg" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="jumlah_brg" placeholder="how many .." required min="1" maxlength="12">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">+62</span>
+                        </div>
+                        <input type="text" id="contact" name="contact" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" class="form-control" placeholder="Phone Number" aria-label="Phone Number" aria-describedby="basic-addon1" required minlength="10" maxlength="12">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" id="kembali" name="kembali" placeholder="when you want bringback the stuff .." required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block" id="cr_submit" name="cr_submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <div style="height: 9px;background-color: #007bff;margin-top: 0px; border-bottom-left-radius:10px; border-bottom-right-radius: 10px;"></div>
+        </div>
+    </div>
+</div>
