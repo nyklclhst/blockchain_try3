@@ -24,9 +24,12 @@ function validate(){
 function ready(){
   if(document.getElementById('msg').innerHTML == "input card"){
     document.getElementById('daftar').hidden = true;
+    document.getElementById('masuk').hidden = true;
+    document.getElementById('input').hidden = false;
   }
   if(document.getElementById('msg').innerHTML == "user ada"){
     document.getElementById('daftar').hidden = true;
-    document.getElementById('masuk').hidden = true;    
+    document.getElementById('masuk').hidden = true;
+    document.getElementById('profile').hidden = false;
   }
 }

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-light navbar-expand-md" style="background-color: transparent;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="assets/img/logosecu.png" style="width: 40px;">
+        </a>
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a  class="nav-link" href="/" style="font-family: 'Fjalla One', sans-serif;font-size: 25px;">Beranda</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="barang" style="font-size: 25px;font-family: 'Fjalla One', sans-serif;">Barang</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: 'Fjalla One', sans-serif;font-size: 25px;">Pinjaman</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size: 25px;font-family: 'Fjalla One', sans-serif;">History</a></li>
+                <li id="profile" class="nav-item dropdown" hidden>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 25px;font-family: 'Fjalla One', sans-serif;">Profile</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left: -40px;">
+                        <a class="dropdown-item" href="#">Edit Profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </li>                        
+            </ul>
+    </div>
+    </div>
+</nav>
+<span id='msg' hidden><%= msgs %></span>
+<div class="dropdown-divider" style="margin-bottom: 50px;"></div>

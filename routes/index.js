@@ -95,5 +95,36 @@ router.post('/login', function(req, res, next){
   })
 })
 
-module.exports = router;
+router.post('/card', function(req,res,next){
+  let card = req.files.fr_card;
+  let cookie = req.cookies.access_token;
+  cookie = cookie.slice(2,66);
+  let name = req.body.fr_name;
+  const url = req.protocol+'://'+req.hostname+':3000/api/wallet/import?name='+name;
+  let formData = {
+    'card' :{
+      value: card.data,
+      options:{
+        contentType: card.mimetype,
+        filename: card.name
+      }
+    }
+  }
+  request.post({ url: url, headers: {"X-Access-Token": cookie}, formData: formData},
+  function(er,re,bd){
+    if(er === null){
+      console.log(bd);
+      if(re.statusCode === 204){
+        res.writeHead(301,{Location: req.protocol+'://'+req.hostname+':8080/'})
+        res.end();
+      } else {
+        res.render('index',{msg: 'gagal'});
+      }
+    } else {
+      console.log(bd);
+      res.render('index',{msg: 'gagal'});
+    }
+  })
+})
 
+module.exports = router;
