@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Seculab Data Center</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fjalla+One">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
+    <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="javascripts/headers.js"></script>
+</head>
+<body style="background-color: transparent;" onload="ready()">
+    <% include ./header %>
+    <div class="container mb-3 mt-3">
+        <table class="table table-striped table-bordered" width="100%" id="table_id">
+            <thead>
+                <tr>
+                    <th>ID Peminjaman</th>
+                    <th>Nama Peminjam</th>
+                    <th>Kontak Peminjam</th>
+                    <th>ID Barang</th>
+                    <th>Jumlah Barang</th>
+                    <th>Status</th>
+                    <th>Tanggal Kembali</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i < id.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= id[i] %>
+                    </td>
+                    <td>
+                        <%= name[i] %>
+                    </td>
+                    <td>
+                        <%= phone[i] %>
+                    </td>
+                    <td>
+                        <%= barang[i] %>
+                    </td>
+                    <td>
+                        <%= sum[i] %>
+                    </td>
+                    <td>
+                        <%=  stat[i] %>
+                    </td>
+                    <td>
+                        <%= back[i] %>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>ID Peminjaman</th>
+                    <th>Nama Peminjam</th>
+                    <th>Kontak Peminjam</th>
+                    <th>ID Barang</th>
+                    <th>Jumlah Barang</th>
+                    <th>Status</th>
+                    <th>Tanggal Kembali</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <% include ./modal %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $('#table_id').DataTable();
+    </script>
+</body>
+</html>

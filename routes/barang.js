@@ -51,6 +51,7 @@ router.get('/', function(req,res,next){
         res.render('tempB',{id: ID, name: name, sum: sum, msg: ID.length, msg1: '', msgs: ''});
         })
     }
+    req
 })
 
 router.post('/', function(req,res,next){
@@ -64,7 +65,7 @@ router.post('/', function(req,res,next){
     let uname = req.body.user;
     let idbar = req.body.idbarang;
     let jumbar = req.body.jumlah_brg;
-    let kontak = req.body.contact;
+    let kontak = '+62'+req.body.contact;
     let kembali = req.body.kembali;
     let temp = 0;
     for(i=0;i<ID.length;i++){
