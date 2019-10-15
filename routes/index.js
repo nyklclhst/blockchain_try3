@@ -69,7 +69,7 @@ router.post('/login', function(req, res, next){
             let pass = data[i].password;
             if(password == pass){
               console.log('redirect');
-              const token = jwt.sign({id: data[i].userID, username: data[i].username}, 'gSi4WmttWuvy2ewoTGooigPwSDoxwZOy', {expiresIn: "5m"});
+              const token = jwt.sign({id: data[i].userID, username: data[i].username}, 'gSi4WmttWuvy2ewoTGooigPwSDoxwZOy', {expiresIn: '5m'});
               res.writeHead(301, {Location: req.protocol+'://'+req.hostname+':3000/auth/jwt/callback?token='+token});
               res.end();
               return;
